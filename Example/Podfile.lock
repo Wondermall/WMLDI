@@ -1,0 +1,20 @@
+PODS:
+  - Expecta (0.4.0)
+  - Specta (0.5.0)
+  - WMLDI (0.1.0)
+
+DEPENDENCIES:
+  - Expecta
+  - Specta
+  - WMLDI (from `../`)
+
+EXTERNAL SOURCES:
+  WMLDI:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Expecta: 392a6b5bfb9f4097e47dd8064d9b732079490332
+  Specta: eb90708ed77569bbda089f8ead10bb99b8e9489e
+  WMLDI: 73bec08cd5a012f2585397da79d6f9a8b8ca2ac2
+
+COCOAPODS: 0.36.0
