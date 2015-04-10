@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'WMLDI', :exclusive => true do
+  pod "WMLDI", :path => "../"
+
+  pod 'Specta'
+  pod 'Expecta'
+end
