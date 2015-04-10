@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
   s.name             = "WMLDI"
   s.version          = "0.1.0"
-  s.summary          = "Dependency injection made simple"
+  s.summary          = "Dependency injection microframework"
   s.description      = <<-DESC
                        Extremly lightweight dependency injection
                        DESC
