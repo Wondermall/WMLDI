@@ -67,7 +67,7 @@ describe(@"WMLDI", ^{
         describe(@"enumerateClassesConformingToProtocol", ^{
             it(@"should enumerate through all classes implementing protocol", ^{
                 NSMutableSet *conformingClasses = [NSMutableSet set];
-                [[WMLDI sharedDI] enumerateClassesConformingToProtocol:@protocol(WMLDITestProtocol1) usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
+                [[WMLDI di] enumerateClassesConformingToProtocol:@protocol(WMLDITestProtocol1) usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
                     [conformingClasses addObject:class];
                 }];
                 expect(conformingClasses).to.haveCountOf(2);
@@ -77,7 +77,7 @@ describe(@"WMLDI", ^{
             
             it(@"should not enumerate if protocol is not implemented by any class", ^{
                 NSMutableSet *conformingClasses = [NSMutableSet set];
-                [[WMLDI sharedDI] enumerateClassesConformingToProtocol:@protocol(WMLDITestEmptyProtocol) usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
+                [[WMLDI di] enumerateClassesConformingToProtocol:@protocol(WMLDITestEmptyProtocol) usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
                     [conformingClasses addObject:class];
                 }];
                 expect(conformingClasses).to.beEmpty();
@@ -86,12 +86,12 @@ describe(@"WMLDI", ^{
         
         describe(@"enumerateClassesConformingToProtocol", ^{
             it(@"should return any class for protocol", ^{
-                Class class = [[WMLDI sharedDI] anyClassImplementingProtocol:@protocol(WMLDITestProtocol2)];
+                Class class = [[WMLDI di] anyClassImplementingProtocol:@protocol(WMLDITestProtocol2)];
                 expect(class).to.equal([WMLDITestProtocol2Implementation1 class]);
             });
             
             it(@"should return nil for protocol not implemented by any classes", ^{
-                Class class = [[WMLDI sharedDI] anyClassImplementingProtocol:@protocol(WMLDITestEmptyProtocol)];
+                Class class = [[WMLDI di] anyClassImplementingProtocol:@protocol(WMLDITestEmptyProtocol)];
                 expect(class).to.beNil();
             });
         });
@@ -101,7 +101,7 @@ describe(@"WMLDI", ^{
         describe(@"enumerateSubclassesOfClass", ^{
             it(@"should include direct subclasses of a class", ^{
                 NSMutableSet *subclasses = [NSMutableSet set];
-                [[WMLDI sharedDI] enumerateSubclassesOfClass:[WMLSuperclass1 class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
+                [[WMLDI di] enumerateSubclassesOfClass:[WMLSuperclass1 class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
                     [subclasses addObject:class];
                 }];
                 expect(subclasses).to.haveCountOf(2);
@@ -111,7 +111,7 @@ describe(@"WMLDI", ^{
             
             it(@"should include not direct subclasses", ^{
                 NSMutableSet *subclasses = [NSMutableSet set];
-                [[WMLDI sharedDI] enumerateSubclassesOfClass:[WMLSuperclass3 class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
+                [[WMLDI di] enumerateSubclassesOfClass:[WMLSuperclass3 class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
                     [subclasses addObject:class];
                 }];
                 expect(subclasses).to.haveCountOf(2);
@@ -120,7 +120,7 @@ describe(@"WMLDI", ^{
             
             it(@"should not include any classes for a class that does not have any subclasses", ^{
                 NSMutableSet *subclasses = [NSMutableSet set];
-                [[WMLDI sharedDI] enumerateSubclassesOfClass:[WMLEmptySuperclass class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
+                [[WMLDI di] enumerateSubclassesOfClass:[WMLEmptySuperclass class] usingBlock:^(__unsafe_unretained Class class, BOOL *stop) {
                     [subclasses addObject:class];
                 }];
                 expect(subclasses).to.beEmpty();
@@ -129,12 +129,12 @@ describe(@"WMLDI", ^{
         
         describe(@"anySubclassOfClass", ^{
             it(@"should return correct subclass for superclass", ^{
-                Class class = [[WMLDI sharedDI] anySubclassOfClass:[WMLSuperclass2 class]];
+                Class class = [[WMLDI di] anySubclassOfClass:[WMLSuperclass2 class]];
                 expect(class).to.equal([WMLSuperclass2Subclass1 class]);
             });
         
             it(@"should not return any entities of a class that does not have any subclasses", ^{
-                Class class = [[WMLDI sharedDI] anySubclassOfClass:[WMLEmptySuperclass class]];
+                Class class = [[WMLDI di] anySubclassOfClass:[WMLEmptySuperclass class]];
                 expect(class).to.beNil();
             });
         });

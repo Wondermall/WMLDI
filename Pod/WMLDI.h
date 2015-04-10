@@ -10,7 +10,7 @@
 
 @interface WMLDI : NSObject
 
-+ (instancetype)sharedDI;
++ (instancetype)di;
 
 - (void)enumerateClassesConformingToProtocol:(Protocol *)protocol usingBlock:(void(^)(Class class, BOOL *stop))block;
 

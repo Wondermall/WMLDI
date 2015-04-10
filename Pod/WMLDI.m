@@ -12,7 +12,7 @@
 
 @implementation WMLDI
 
-+ (instancetype)sharedDI {
++ (instancetype)di {
     static WMLDI *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
