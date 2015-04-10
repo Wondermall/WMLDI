@@ -10,26 +10,18 @@
 Pod::Spec.new do |s|
   s.name             = "WMLDI"
   s.version          = "0.1.0"
-  s.summary          = "A short description of WMLDI."
+  s.summary          = "Extremly lightweight dependency injection"
   s.description      = <<-DESC
-                       An optional longer description of WMLDI
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Dependency injection made simple
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/WMLDI"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/Wondermall/WMLDI"
   s.license          = 'MIT'
   s.author           = { "Sash Zats" => "sash@zats.io" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/WMLDI.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/Wondermall/WMLDI.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/zats'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/*'
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
