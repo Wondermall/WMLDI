@@ -10,9 +10,9 @@
 Pod::Spec.new do |s|
   s.name             = "WMLDI"
   s.version          = "0.1.0"
-  s.summary          = "Extremly lightweight dependency injection"
+  s.summary          = "Dependency injection made simple"
   s.description      = <<-DESC
-                       Dependency injection made simple
+                       Extremly lightweight dependency injection
                        DESC
   s.homepage         = "https://github.com/Wondermall/WMLDI"
   s.license          = 'MIT'

@@ -5,7 +5,13 @@
 [![License](https://img.shields.io/cocoapods/l/WMLDI.svg?style=flat)](http://cocoapods.org/pods/WMLDI)
 [![Platform](https://img.shields.io/cocoapods/p/WMLDI.svg?style=flat)](http://cocoapods.org/pods/WMLDI)
 
-## Usage
+# Dependancy Injection made simple
+
+```objectivec
+[[WMLDI di] anyClassImplementingProtocol:@protocol(ModuleRegistrationProtocol)];
+```
+
+Or simply see `WMLDIUnitSpec.m` for all the use cases.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
