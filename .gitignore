@@ -102,6 +102,11 @@ DerivedData
 Carthage/Build
 
 
+### Carthage ###
+# Carthage - A simple, decentralized dependency manager for Cocoa
+Carthage.checkout
+Carthage.build
+
 ### Objective-C ###
 # Xcode
 #
