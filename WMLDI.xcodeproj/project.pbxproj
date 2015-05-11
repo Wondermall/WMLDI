@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C51ED701B00525D00B9E7A0 /* WMLDI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C51ED6E1B00525C00B9E7A0 /* WMLDI.h */; };
+		5C51ED701B00525D00B9E7A0 /* WMLDI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C51ED6E1B00525C00B9E7A0 /* WMLDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C51ED711B00525D00B9E7A0 /* WMLDI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C51ED6F1B00525D00B9E7A0 /* WMLDI.m */; };
 /* End PBXBuildFile section */
 
